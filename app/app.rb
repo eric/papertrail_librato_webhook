@@ -6,12 +6,13 @@ module PapertrailSilverlineWebhook
 
     dir = File.dirname(File.expand_path(__FILE__))
 
-    set :public,   "#{dir}/public"
+    # set :public,   "#{dir}/public"
     set :root,     RACK_ROOT
     set :app_file, __FILE__
-    set :static,   true
+    # set :static,   true
 
     get '/' do
+      'hello'
     end
 
     post '/submit' do
