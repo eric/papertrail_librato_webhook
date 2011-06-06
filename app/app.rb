@@ -12,6 +12,7 @@ module PapertrailSilverlineWebhook
     # set :static,   true
 
     get '/' do
+      puts 'hello'
       'hello'
     end
 
