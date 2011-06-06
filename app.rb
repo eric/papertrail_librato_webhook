@@ -6,10 +6,8 @@ module PapertrailSilverlineWebhook
 
     dir = File.dirname(File.expand_path(__FILE__))
 
-    # set :public,   "#{dir}/public"
     set :root,     RACK_ROOT
     set :app_file, __FILE__
-    # set :static,   true
 
     get '/' do
       puts 'hello'
@@ -25,7 +23,7 @@ module PapertrailSilverlineWebhook
       faraday.headers[:content_type] = 'application/json'
 
       result = faraday.post do |req|
-        req.url "https://dev.librato.com/v1/metrics.json"
+        req.url "https://metrics-api.librato.com/v1/metrics.json"
         req.body = {
           :gauges => {
             params[:name] => {
