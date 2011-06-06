@@ -1,4 +1,4 @@
-require 'app/libraries'
+require 'libraries'
 
 module PapertrailSilverlineWebhook
   class App < Sinatra::Base
