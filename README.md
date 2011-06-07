@@ -12,7 +12,9 @@ The webhook endpoint is `/submit`. It only accepts `POST`.
 The parameters it takes are:
 
 `user`: The email address you have registered with Silverline
+
 `token`: Your Silverline API token
+
 `name`: The name of the gauge to use
 
 An example URL would be:
