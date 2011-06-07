@@ -4,4 +4,3 @@ RACK_ROOT = File.expand_path(File.dirname(__FILE__) + '/..')
 require 'bundler'
 Bundler.require :default
 
-require 'helpers'
