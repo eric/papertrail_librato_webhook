@@ -15,11 +15,12 @@ module PapertrailSilverlineWebhook
     post '/submit' do
       payload = HashWithIndifferentAccess.new(Yajl::Parser.parse(params[:payload]))
 
-      count = payload[:events].length
+      redis_key = [ 'counter', params[:user], params[:token], params[:name] ].join(':')
+      count = Redis.current.incrby(payload[:events].length)
 
       result = silverline.post 'metrics.json' do |req|
         req.body = {
-          :gauges => {
+          :counters => {
             params[:name] => {
               :value => count
             }
